@@ -1,0 +1,503 @@
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    height: 100vh;
+    width: 100%;
+    background-color: #f0f0f0 !important;
+    overflow-x: hidden;
+}
+html {
+    scroll-behavior: smooth;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* grid container lines */
+
+.grid-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100vw;
+    height: 100vh;
+    
+
+    /* 1. Using repeating gradients for better scaling */
+    background-image: 
+        repeating-linear-gradient(to right, #33333340 0px, #33333343 1px, transparent 1px, transparent 150px),
+        repeating-linear-gradient(to bottom, #33333340 0px, #33333343 1px, transparent 1px, transparent 150px);
+
+    /* Apply this to your grid container */
+    mask-image: radial-gradient(
+        ellipse at center, 
+        rgba(0,0,0,1) 0%, 
+        rgba(0,0,0,1) 20%, 
+        rgba(0,0,0,0) 80%);
+
+    -webkit-mask-image: radial-gradient(
+        ellipse at center, 
+        rgba(0,0,0,1) 0%, 
+        rgba(0,0,0,1) 20%, 
+        rgba(0,0,0,0) 80%);
+}
+
+/* grid container lines */
+
+/* navigation */
+
+.nav-line {
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    height: 15px;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+}
+.navdrop {
+    position: absolute;
+    top: 0px; 
+    width: 800px;
+    height: 100px; 
+    background-color: black;
+    cursor:default;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    font-size: 30px;
+    clip-path: path('M 0,0 L 800,0 L 800,15 L 530,15 C 500,15 490,25 470,40 C 455,55 440,55 400,55 C 360,55 345,55 330,40 C 310,25 300,15 270,15 L 0,15 Z');
+    transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+    
+}
+.navdrop:hover{
+    clip-path: path('M 0,0 L 800,0 L 800,15 L 630,15 C 600,15 590,25 570,40 C 555,55 540,55 400,55 C 260,55 245,55 230,40 C 210,25 200,15 170,15 L 0,15 Z');
+}
+.navdrop-box{
+    width: 280px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.option{
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    opacity: 0;
+    transform: translateY(-30px);
+    transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1),  opacity 0.4s ease;
+}
+.navdrop:hover .option{
+    transform: translateY(0px);
+    opacity: 1;
+}
+.option a{
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: #bdbdbd;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: all 0.4s ease;
+}
+.option:hover a{
+    color: #F4F4F4;
+}
+.eye{
+    width: 80px;
+    height: 38px;
+    background-color: #f8ebeb;
+    margin-top: 8px;
+    border-radius: 50%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    box-shadow: inset 0 2px 10px rgba(255, 36, 36, 0.246);
+
+    clip-path: path('M 0,19 C 0,19 20,0 40,0 C 60,0 80,19 80,19 C 80,19 60,38 40,38 C 20,38 0,19 0,19 Z');
+}
+.iris{
+    width: 35px;
+    height: 35px;
+    background: radial-gradient(circle, #000 30%, #F26522 100%);
+    border-radius: 50%;
+    position: absolute;
+}
+.iris::after{
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: 8px;
+    height: 8px;
+    background: rgba(255,255,255,0.3);
+    border-radius: 50%;
+}
+
+/* navigation */
+
+/* main heading of hero page */
+
+    /* first line */
+
+.hero-heading{
+    width: 100%;
+    margin-top: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.earphone-sticker-group{
+    position: relative;
+}
+.earphone-sticker{
+    position: absolute;
+    top: -8rem;
+    left: -4.8rem;
+    width: 120px;
+    height: 160px;
+    transform: rotate(15deg);
+    transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+    cursor: pointer;
+}
+.earphone-sticker img{
+    width: 120px;
+    height: 160px;
+}
+.photo-card {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 200px;
+    height: 250px;
+    padding: 12px 12px 40px 12px;
+    background-color: white;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    box-sizing: border-box;
+    z-index: 1;
+    opacity: 0;
+    transform: translateX(-30%) translateY(130px) scale(0.5) translateY(0);
+    transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+    pointer-events: none;
+}
+.photo-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border: 1px solid #ddd;
+}
+.earphone-sticker:hover  {
+    transform: rotate(0deg) scale(1.1);
+}
+.earphone-sticker-group:hover .photo-card {
+    opacity: 1;
+    transform: translateX(-150%) translateY(180px) rotate(-5deg);
+}
+.firstline{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.name-group{
+    display: flex;
+    flex-direction: column;
+    text-align: end;
+}
+.name{
+    font-family: "Bricolage Grotesque", sans-serif;
+    font-size: 95px;
+    text-align: right;
+    line-height: 68px;
+    color: #282725;
+}
+.lastname{
+    font-family: "Bricolage Grotesque", sans-serif;
+    text-align: right;
+    font-size: 39px;
+    line-height: 35px;
+    color: #282725;
+}
+.digital{
+    font-family: "Bricolage Grotesque", sans-serif;
+    text-align: left;
+    font-size: 150px;
+    font-weight: 900;
+    line-height: 105px;
+    background: linear-gradient(to right, #F26522 0%, #a13600 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+    /* first line */
+
+    /* secound line */
+
+.lines{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.exp{
+    font-family: "Bricolage Grotesque", sans-serif;
+    font-weight: 900;
+    font-size: 150px;
+    line-height: 110px;
+    background: linear-gradient(45deg, #252525 10%, #2C2C2C 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+    /* secound line */
+
+    /* third line */
+
+.thirdline {
+    height: 110px;
+    width: 800px; 
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    background: transparent;
+    mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+}
+.roller {
+    display: flex;
+    flex-direction: row;
+    white-space: nowrap;
+    width: max-content;
+    will-change: transform;
+    animation: bounce-slide 30s ease-in-out infinite alternate;
+    animation-play-state: paused; 
+}
+.word {
+    font-family: "Bricolage Grotesque", sans-serif;
+    font-size: 150px;
+    font-weight: 900;
+    display: flex;
+    align-items: center;
+    line-height: 110px;
+    padding: 0 40px;
+    flex-shrink: 0; 
+    color: #2C2C2C;
+}
+.word span {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #F26522;
+    margin-left: 60px;
+}
+@keyframes bounce-slide {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(calc(-100% + 800px));
+    }
+}
+.laptop-sticker-group{
+    position: relative;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+.laptop-sticker{
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    right: -5rem;
+    top: -8rem;
+    transform: rotate(20deg);
+    transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.laptop-sticker img{
+    width: 180px;
+    height: 180px;
+    cursor: pointer;
+}
+.language-box {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 200px;
+    height: 250px;
+    padding: 12px 12px 40px 12px;
+    background-color: white;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    box-sizing: border-box;
+    z-index: 1;
+    opacity: 0;
+    transform: translateX(180%) translateY(80px) scale(0.5) translateY(0);
+    transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+    pointer-events: none;
+}
+.language-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border: 1px solid #ddd;
+}
+.laptop-sticker:hover  {
+    transform: rotate(0deg) scale(1.1);
+}
+.laptop-sticker-group:hover .language-box {
+    opacity: 1;
+    transform: translateX(270%) translateY(-120px) rotate(-5deg);
+}
+
+    /* third line */
+
+/* paragraph that clicks */
+
+.paragraph{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 90px;
+}
+.para-eng{
+    font-family: "Bricolage Grotesque", sans-serif;
+    font-size: 38px;
+    font-weight: 560;
+    text-align: center;
+}
+
+/* paragraph that clicks */
+
+/* message button */
+
+.message-button{
+    margin-top: 50px ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.msg-container{
+    width: 70px;
+    height: 70px;
+    border-radius: 50px;
+    background-color: #F26522;
+    padding: 5px 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.5s cubic-bezier(0.45, 0, 0.55, 1); 
+}
+.profile-image{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+.profile-image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+.msg-text{
+    color: rgb(145, 145, 145);
+    line-height: 20px;
+    opacity: 0;
+    transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1); 
+}
+.msg-name{
+    color: white;
+}
+.msg-icon{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    opacity: 0;
+    transform: translateX(-120px);
+    transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1); 
+}
+.message{
+    font-size: 30px;
+    color: #F26522;
+}
+
+    /* message button hover */
+
+    .msg-container:hover{
+        width: 300px;
+        background-color: #000;
+    }
+    .msg-container:hover .msg-icon{
+        opacity: 1;
+        transform: translateX(0px);
+    }
+    .msg-container:hover .msg-text{
+        opacity: 1;
+        transform: translateX(-33px);
+    }
+
+    /* message button hover */
+
+
+/* message button */
+
+.screen-position{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+.screen{
+    margin-top: 55px;
+    font-size: 400px;
+    font-weight: 900;
+    height: 600px;
+    border-radius: 20px;
+    color: #00000018;
+    line-height: 340px;
+    margin-left: 50px;
+}
+
+
+
+
+
+
+
+                                                                                                                                 /* respnsive */
+
+
+@media (min-width:1025px) and (max-width:1440px){
+    *{
+    margin: 0;
+    padding: 0;
+    box-sizing: 0;
+}
+}
+@media (min-width:997px) and (max-width:1024px){
+   
+}
+@media (min-width:576px) and (max-width:996px){
+ 
+}
+@media (max-width:575px){
+  
+} 
