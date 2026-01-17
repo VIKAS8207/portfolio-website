@@ -460,6 +460,32 @@ a {
 
 /* message button */
 
+/* work heading to start displaying work */
+
+.new-page-work{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: "Bricolage Grotesque", sans-serif;
+}
+.new-work-txt{
+    text-transform: uppercase;
+    margin-top: 80px;
+    font-size: 90px;
+    font-weight: 600;
+}
+.new-work-txt-line2{
+    font-family: "Zeyada", cursive;
+    color: #999999;
+    font-size: 40px;
+    font-weight: 400;
+    margin-bottom: 40px;
+
+}
+
+/* work heading to start displaying work */
+
 .screen-position{
     display: flex;
     align-items: center;
@@ -641,3 +667,4 @@ a {
   
 
 } 
+
