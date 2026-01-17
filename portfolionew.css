@@ -486,6 +486,117 @@ a {
 
 /* work heading to start displaying work */
 
+/* work and projects */
+
+.screen-image{
+    width: 100%;
+    height: 500px;
+    border-radius: 20px;
+    margin-top: 25px;
+    overflow: hidden;
+}
+.screen-image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+.work-lines-container{
+    display: flex;
+    justify-content: center;
+    align-items: end;
+}
+.rmax-case-text{ 
+    margin-top: 10px;
+    font-size: 26px;
+    text-align: start;
+    color: #F0F0F0;
+}
+.work-content{
+    margin-top: 6px;
+    text-align: justify;
+    line-height: 21px;
+    color: #F0F0F0;
+}
+.work-case-study a{
+    text-decoration: none;
+    color: #F0F0F0;
+}
+.work-case-study{
+    width: 200px;
+    margin-top: 22px;
+    background-color: #F0F0F0;
+    border: none;
+    border-radius: 50px;
+    padding: 8px 15px;
+    color: #2C2C2C;
+    letter-spacing: 2px;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+/* Rmax work */
+
+.work-lines{
+    position: relative;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.486)), 
+                url('/image/rmaxbg.jpg'); 
+    background-size: cover;
+    background-position: center;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: start;
+    font-family: "Bricolage Grotesque", sans-serif;
+    padding: 40px;
+    border-radius: 20px;
+    overflow: hidden;
+}
+.work-header{
+    width: 150px;
+    height: 60px;
+}
+.work-header img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+}
+
+/* Rmax work */
+
+/* eye work */
+
+.work-lines-eye{
+    position: relative;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.486)), 
+                url('/image/eyebg.jpg'); 
+    background-size: cover;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: start;
+    font-family: "Bricolage Grotesque", sans-serif;
+    padding: 40px;
+    border-radius: 20px;
+    overflow: hidden;
+}
+.work-header-eye{
+    width: 80px;
+    height: 80px;
+}
+.work-header-eye img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+}
+
+/* eye work */
+/* work and projects */
+
 /* footer */
 
 .footer-box{
@@ -652,5 +763,6 @@ a {
   
 
 } 
+
 
 
