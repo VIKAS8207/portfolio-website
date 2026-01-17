@@ -486,21 +486,6 @@ a {
 
 /* work heading to start displaying work */
 
-.screen-position{
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-}
-.screen{
-    margin-top: 55px;
-    font-size: 400px;
-    font-weight: 900;
-    height: 600px;
-    border-radius: 20px;
-    color: #00000018;
-    line-height: 340px;
-    margin-left: 50px;
-}
 /* footer */
 
 .footer-box{
@@ -667,4 +652,5 @@ a {
   
 
 } 
+
 
