@@ -372,8 +372,9 @@ a {
     margin-top: 90px;
 }
 .para-eng{
+    width: 800px;
     font-family: "Bricolage Grotesque", sans-serif;
-    font-size: 38px;
+    font-size: 35px;
     font-weight: 560;
     text-align: center;
 }
@@ -763,6 +764,7 @@ a {
   
 
 } 
+
 
 
 
