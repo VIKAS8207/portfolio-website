@@ -644,7 +644,7 @@ a {
     height: 600px;
     overflow: hidden ;
     font-family: "Bricolage Grotesque", sans-serif;
-    z-index: 700;
+    z-index: 1;
 }
 .file-container{
     position: relative;
@@ -966,6 +966,7 @@ a {
   
 
 } 
+
 
 
 
