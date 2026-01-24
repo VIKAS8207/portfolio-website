@@ -9,6 +9,14 @@ body {
     background-color: #f0f0f0 !important;
     overflow-x: hidden;
 }
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+    display: none !important;
+}
+html, body {
+    scrollbar-width: none !important;
+    -ms-overflow-style: none !important;
+}
 html {
     scroll-behavior: smooth;
 }
@@ -993,6 +1001,7 @@ a {
   
 
 } 
+
 
 
 
