@@ -707,12 +707,12 @@ a {
 }
 .file-info { 
     position: relative;
-    background: #d8ebff;
+    background: linear-gradient(rgb(217, 244, 255) 0%, rgb(108, 206, 245) 100%);
     clip-path: url(#fileShapeDesktop); 
 }
 .file-rmax { 
     position: relative;
-    background: #ffc5c5;  
+    background: linear-gradient(rgb(255, 216, 216) 0%, rgb(255, 116, 116) 100%); 
     clip-path: url(#fileShapeInverted); 
 }
 .layer-1 { z-index: 1; top: 0px; }
@@ -1001,6 +1001,7 @@ a {
   
 
 } 
+
 
 
 
