@@ -49,6 +49,33 @@ a {
 
 /* grid container lines */
 
+/* doted */
+
+.doted{
+    position: absolute; 
+    top: 135rem; 
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -2;      
+    background-color: #f0f0f0; 
+    background-image: radial-gradient(#161616 2px, transparent 2px);
+    background-size: 40px 40px;
+    opacity: 0.3;
+    mask-image: radial-gradient(
+        ellipse at center, 
+        rgba(0,0,0,1) 0%, 
+        rgba(0,0,0,1) 20%, 
+        rgba(0,0,0,0) 80%);
+    -webkit-mask-image: radial-gradient(
+        ellipse at center, 
+        rgba(0,0,0,1) 0%, 
+        rgba(0,0,0,1) 20%, 
+        rgba(0,0,0,0) 80%);
+}
+
+/* doted */
+
 /* navigation */
 
 .nav-line {
@@ -966,6 +993,7 @@ a {
   
 
 } 
+
 
 
 
