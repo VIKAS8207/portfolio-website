@@ -835,6 +835,70 @@ a {
 /* files individual */
 /* file */
 
+/* my other works */
+
+.my-works-all-extra{
+    position: relative;
+    width: 100%;
+    height: 95vh;
+    background: black;
+    margin-bottom: 100px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: -1;
+}
+.orange-glow{
+    position: absolute;
+    width: 100%;
+    height: 300px;
+    border-radius: 50%;
+    filter: blur(30px);
+    background: radial-gradient(
+    circle, 
+    rgb(242, 101, 34 ,0.4) 0%, 
+    rgb(242, 101, 34 ,0.3) 20%, 
+    rgb(242, 101, 34 ,0.1) 70%);
+}
+.circle1{
+    top: -29%;
+}
+.circle2{
+    bottom: -29%;
+}
+.work-text-side{
+    position: absolute;
+    width: 90%;
+    font-size: 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 5;
+}
+.side-test-black{
+    font-family: "Bricolage Grotesque", sans-serif;
+    color:#f0f0f048 ;
+}
+.canva-video{
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.background-container{
+    width: 60%;
+    height: 70%;
+    object-fit: cover;
+    object-position: center;
+    z-index: 10;
+    position: absolute;
+    border-radius: 5px;
+}
+
+/* my other works */
+
 /* footer */
 
 .footer-box{
@@ -1001,6 +1065,7 @@ a {
   
 
 } 
+
 
 
 
