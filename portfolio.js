@@ -40,3 +40,27 @@ const iris = document.querySelector('.iris');
         document.getElementById("year").innerHTML = new Date().getFullYear();
 
 // year and copyright element
+
+// circle dots
+
+        closeBtn.addEventListener('click', closePortal);
+        backdrop.addEventListener('click', closePortal);
+
+        const wrapper = document.getElementById('tick-wrapper');
+        const totalTicks = 60; // Number of small lines around the circle
+
+        for (let i = 0; i < totalTicks; i++) {
+            const tick = document.createElement('div');
+            tick.className = 'tick';
+            
+            // Calculate rotation
+            const degrees = i * (360 / totalTicks);
+            tick.style.transform = `rotate(${degrees}deg)`;
+
+            // Make every 15th tick a "major" tick
+            
+
+            wrapper.appendChild(tick);
+        }
+
+// circle dots
