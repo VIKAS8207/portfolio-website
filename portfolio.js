@@ -41,7 +41,7 @@ const iris = document.querySelector('.iris');
 
 // year and copyright element
 
-// circle dots
+// circle tick wraper
 
         const wrapper = document.getElementById('tick-wrapper');
         const totalTicks = 60; // Number of small lines around the circle
@@ -56,11 +56,11 @@ const iris = document.querySelector('.iris');
 
             // Make every 15th tick a "major" tick
             
-
             wrapper.appendChild(tick);
         }
+// circle tick wraper
 
-// circle dots
+// music play btn
 
         const audio = document.getElementById("myAudio");
         const btn = document.getElementById("playPauseBtn");
@@ -94,6 +94,9 @@ const iris = document.querySelector('.iris');
             icon.style.marginLeft = "5px";
         };
 
+// music play btn
+
+// portal overlay open and close
 
         const openBtn = document.getElementById('portal-overlay-btn');
         const closeBtn = document.getElementById('closeBtn');
@@ -117,24 +120,12 @@ const iris = document.querySelector('.iris');
         closeBtn.addEventListener('click', closePortal);
         backdrop.addEventListener('click', closePortal);
 
-        const wrapper = document.getElementById('tick-wrapper');
-        const totalTicks = 60; // Number of small lines around the circle
 
-        for (let i = 0; i < totalTicks; i++) {
-            const tick = document.createElement('div');
-            tick.className = 'tick';
-            
-            // Calculate rotation
-            const degrees = i * (360 / totalTicks);
-            tick.style.transform = `rotate(${degrees}deg)`;
+// portal overlay open and close
 
-            // Make every 15th tick a "major" tick
-            
 
-            wrapper.appendChild(tick);
-        }
+// Simple Drag and Drop Logic
 
-        // Simple Drag and Drop Logic
         const draggables = document.querySelectorAll('.draggable');
         let activeElement = null;
         let offset = { x: 0, y: 0 };
@@ -199,4 +190,4 @@ const iris = document.querySelector('.iris');
             activeElement = null;
         });
 
-
+// Simple Drag and Drop Logic
