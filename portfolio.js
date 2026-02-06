@@ -62,8 +62,6 @@ const iris = document.querySelector('.iris');
 
 // circle dots
 
-// play pause btn
-
         const audio = document.getElementById("myAudio");
         const btn = document.getElementById("playPauseBtn");
         const icon = document.getElementById("icon");
@@ -96,8 +94,20 @@ const iris = document.querySelector('.iris');
             icon.style.marginLeft = "5px";
         };
 
-// play pause btn
 
+        const openBtn = document.getElementById('portal-overlay-btn');
+        const closeBtn = document.getElementById('closeBtn');
+        const portal = document.getElementById('portal');
+        const backdrop = document.getElementById('backdrop');
+        const body = document.body;
+
+        openBtn.addEventListener('click', () => {
+            portal.classList.add('active');
+            backdrop.classList.add('active');
+            body.classList.add('no-scroll');
+        });
+
+        // Clicking the close button OR the backdrop will close the portal
         const closePortal = () => {
             portal.classList.remove('active');
             backdrop.classList.remove('active');
@@ -106,4 +116,87 @@ const iris = document.querySelector('.iris');
 
         closeBtn.addEventListener('click', closePortal);
         backdrop.addEventListener('click', closePortal);
+
+        const wrapper = document.getElementById('tick-wrapper');
+        const totalTicks = 60; // Number of small lines around the circle
+
+        for (let i = 0; i < totalTicks; i++) {
+            const tick = document.createElement('div');
+            tick.className = 'tick';
+            
+            // Calculate rotation
+            const degrees = i * (360 / totalTicks);
+            tick.style.transform = `rotate(${degrees}deg)`;
+
+            // Make every 15th tick a "major" tick
+            
+
+            wrapper.appendChild(tick);
+        }
+
+        // Simple Drag and Drop Logic
+        const draggables = document.querySelectorAll('.draggable');
+        let activeElement = null;
+        let offset = { x: 0, y: 0 };
+        let highestZ = 100;
+
+        draggables.forEach(el => {
+            el.addEventListener('mousedown', (e) => {
+                activeElement = el;
+                
+                // 1. Bring to front
+                highestZ++;
+                el.style.zIndex = highestZ;
+
+                // 2. Calculate offset
+                offset.x = e.clientX - el.offsetLeft;
+                offset.y = e.clientY - el.offsetTop;
+                
+                // 3. Visual feedback (Lift effect)
+                el.style.boxShadow = "30px 50px 80px rgba(0,0,0,0.5)";
+                el.style.transform += " scale(1.05)"; 
+            });
+        });
+
+        document.addEventListener('mousemove', (e) => {
+            if (!activeElement) return;
+            
+            // Move element
+            activeElement.style.left = (e.clientX - offset.x) + 'px';
+            activeElement.style.top = (e.clientY - offset.y) + 'px';
+        });
+
+        document.addEventListener('mouseup', () => {
+            if (activeElement) {
+                // Remove visual "lift" feedback
+                activeElement.style.boxShadow = "";
+                activeElement.style.transform = activeElement.style.transform.replace(" scale(1.05)", "");
+                activeElement = null;
+            }
+        });
+
+        // Touch support for mobile
+        document.addEventListener('touchstart', (e) => {
+            const touch = e.touches[0];
+            const target = e.target.closest('.draggable');
+            if (target) {
+                activeElement = target;
+                highestZ++;
+                target.style.zIndex = highestZ;
+                offset.x = touch.clientX - target.offsetLeft;
+                offset.y = touch.clientY - target.offsetTop;
+            }
+        });
+
+        document.addEventListener('touchmove', (e) => {
+            if (!activeElement) return;
+            const touch = e.touches[0];
+            activeElement.style.left = (touch.clientX - offset.x) + 'px';
+            activeElement.style.top = (touch.clientY - offset.y) + 'px';
+        });
+
+        document.addEventListener('touchend', () => {
+            activeElement = null;
+        });
+
 
