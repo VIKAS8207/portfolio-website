@@ -64,3 +64,39 @@ const iris = document.querySelector('.iris');
         }
 
 // circle dots
+
+// play pause btn
+
+        const audio = document.getElementById("myAudio");
+        const btn = document.getElementById("playPauseBtn");
+        const icon = document.getElementById("icon");
+
+        btn.addEventListener("click", () => {
+            if (audio.paused) {
+                // Restart song every time play is clicked
+                audio.currentTime = 0; 
+                audio.play();
+                
+                // Switch icon to Pause
+                icon.classList.remove("fa-play");
+                icon.classList.add("fa-pause");
+                // Remove the left margin used for the play button
+                icon.style.marginLeft = "0px";
+            } else {
+                audio.pause();
+                
+                // Switch icon to Play
+                icon.classList.remove("fa-pause");
+                icon.classList.add("fa-play");
+                // Add left margin back to visually center the triangle
+                icon.style.marginLeft = "5px";
+            }
+        });
+
+        // Reset icon if song finishes
+        audio.onended = () => {
+            icon.classList.replace("fa-pause", "fa-play");
+            icon.style.marginLeft = "5px";
+        };
+
+// play pause btn
