@@ -43,9 +43,6 @@ const iris = document.querySelector('.iris');
 
 // circle dots
 
-        closeBtn.addEventListener('click', closePortal);
-        backdrop.addEventListener('click', closePortal);
-
         const wrapper = document.getElementById('tick-wrapper');
         const totalTicks = 60; // Number of small lines around the circle
 
@@ -100,3 +97,13 @@ const iris = document.querySelector('.iris');
         };
 
 // play pause btn
+
+        const closePortal = () => {
+            portal.classList.remove('active');
+            backdrop.classList.remove('active');
+            body.classList.remove('no-scroll');
+        };
+
+        closeBtn.addEventListener('click', closePortal);
+        backdrop.addEventListener('click', closePortal);
+
