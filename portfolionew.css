@@ -1802,6 +1802,86 @@ body.no-scroll {
 
 /* who am i */
 
+/* the way i work */
+
+        .process-section {
+            max-width: 1600px;
+            margin: 0 auto;
+            padding: 100px 40px; 
+        }
+
+        .process-main-main-heading {
+            font-family: "Bricolage Grotesque", sans-serif;
+            font-size: clamp(2.2rem, 5vw, 4rem);
+            font-weight: 500;
+            line-height: 1.05;
+            letter-spacing: -0.04em;
+            margin-bottom: 80px;
+            max-width: 95%;
+        }
+
+        .process-content-wrapper {
+            max-width: 1000px;
+            margin-left: 0;
+            margin-right: auto;
+        }
+
+        .process-row {
+            display: grid;
+            grid-template-columns: 1fr 2fr; 
+            border-top: 1px solid #55555565;
+            padding: 60px 0;
+        }
+
+        .process-title h3 {
+            font-family: "Bricolage Grotesque", sans-serif;
+            font-size: 1.35rem;
+            font-weight: 600;
+            margin: 0;
+            letter-spacing: -0.01em;
+        }
+
+        .process-content p {
+            font-family: "Bricolage Grotesque", sans-serif;
+            font-size: 1.25rem;
+            color: #555555;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        .canvas-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            min-height: 700px; 
+        }
+
+        #canvas {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+
+        @media (max-width: 1200px) {
+            .process-row {
+                grid-template-columns: 1fr 1.5fr;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .process-row {
+                grid-template-columns: 1fr;
+                gap: 24px;
+                padding: 40px 0;
+            }
+            .canvas-container {
+                height: 400px;
+                margin-bottom: 50px;
+            }
+        }
+
+/* the way i work */
+
 /* footer */
 
 .footer-box{
@@ -1968,6 +2048,7 @@ body.no-scroll {
   
 
 } 
+
 
 
 
