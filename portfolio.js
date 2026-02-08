@@ -191,3 +191,26 @@ const iris = document.querySelector('.iris');
         });
 
 // Simple Drag and Drop Logic
+
+//work to work above and beyond
+
+        function safeScroll(event, targetId) {
+            // 1. STOP the browser from jumping to the top or refreshing
+            event.preventDefault();
+
+            const target = document.getElementById(targetId);
+            if (target) {
+                // 2. Calculate position manually
+                // We subtract 60 (or your nav height) so the header doesn't cover the title
+                const navHeight = 60; 
+                const targetPosition = target.offsetTop - navHeight;
+
+                // 3. Perform the window-level scroll
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
+            }
+        }
+
+//work to work above and beyond
