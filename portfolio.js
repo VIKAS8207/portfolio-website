@@ -214,3 +214,93 @@ const iris = document.querySelector('.iris');
         }
 
 //work to work above and beyond
+
+//the process animation
+
+    const canvas = document.getElementById('canvas');
+    const ctx = canvas.getContext('2d');
+    const parent = document.getElementById('canvasParent');
+
+    let width, height;
+    let points = [];
+    const totalPoints = 120;
+
+    function resize() {
+        width = parent.offsetWidth;
+        height = parent.offsetHeight;
+        canvas.width = width;
+        canvas.height = height;
+        initPoints();
+    }
+
+    function initPoints() {
+        points = [];
+        for (let i = 0; i < totalPoints; i++) {
+            const progress = i / (totalPoints - 1);
+            const middleChaos = Math.sin(progress * Math.PI);
+
+            points.push({
+                x: width / 2,
+                y: height * progress,
+                originX: width / 2,
+                noise: middleChaos
+            });
+        }
+    }
+
+    window.addEventListener('resize', resize);
+    resize();
+
+    let tick = 0;
+
+    function drawLine(tickOffset, color, thickness, freqScale, ampScale) {
+        ctx.beginPath();
+        ctx.moveTo(points[0].x, points[0].y);
+
+        // Create Gradient for the specific line
+        const gradient = ctx.createLinearGradient(0, 0, 0, height);
+        gradient.addColorStop(0, 'rgba(0, 0, 0, 0)');
+        gradient.addColorStop(0.15, color);
+        gradient.addColorStop(0.85, color);
+        gradient.addColorStop(1, 'rgba(0, 0, 0, 0)');
+
+        for (let i = 0; i < points.length; i++) {
+            let p = points[i];
+            
+            const amplitude = (width * ampScale) * p.noise; 
+            const frequency = freqScale; 
+            
+            // Apply unique offset per line so they don't overlap perfectly
+            let currentX = p.originX + Math.sin((tick + tickOffset) * frequency + (i * 0.1)) * amplitude;
+            currentX += Math.cos((tick + tickOffset) * 0.6 + (i * 0.2)) * (amplitude * 0.35);
+
+            if (i > 0) {
+                let xc = (currentX + points[i-1].lastX) / 2;
+                let yc = (p.y + points[i-1].y) / 2;
+                ctx.quadraticCurveTo(points[i - 1].lastX, points[i - 1].y, xc, yc);
+            }
+            p.lastX = currentX; // Store for the next point's curve calculation
+        }
+
+        ctx.strokeStyle = gradient;
+        ctx.lineWidth = thickness;
+        ctx.lineCap = 'round';
+        ctx.stroke();
+    }
+
+    function animate() {
+        ctx.clearRect(0, 0, width, height);
+        tick += 0.0045; 
+
+        // 1. Draw the lighter, "secondary" thread first (so it stays behind)
+        drawLine(10, 'rgba(0, 0, 0, 0.2)', 0.8, 0.85, 0.35);
+
+        // 2. Draw the primary dark thread
+        drawLine(0, 'rgba(0, 0, 0, 1)', 1.4, 0.95, 0.3);
+
+        requestAnimationFrame(animate);
+    }
+
+    animate();
+
+//the process animation
