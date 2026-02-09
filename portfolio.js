@@ -304,3 +304,24 @@ const iris = document.querySelector('.iris');
     animate();
 
 //the process animation
+
+//mobile warning go back to desktop
+
+    function checkWidth() {
+            const warning = document.getElementById('mobile-warning');
+            const desktopMinWidth = 1024; // Tablet/Mobile threshold
+
+            if (window.innerWidth < desktopMinWidth) {
+                warning.style.display = 'flex';
+                document.body.style.overflow = 'hidden';
+            } else {
+                warning.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        }
+
+        window.addEventListener('load', checkWidth);
+        window.addEventListener('resize', checkWidth);
+
+//mobile warning go back to desktop
+
