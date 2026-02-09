@@ -1,0 +1,467 @@
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    height: 100vh;
+    width: 100%;
+    background-color: #ffffff !important;
+    overflow-x: hidden;
+}
+html {
+    scroll-behavior: smooth;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* case study navigation bar comon for work */
+
+.nav-main{
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    height: 60px;
+    background-color: #000;
+    border-radius: 50px;
+    color: #f0f0f0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.navbar-content{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30px;
+    font-family: "Bricolage Grotesque", sans-serif;
+    font-size: 20px;
+}
+.fa-arrow-right{ 
+    transform: rotate(180deg);
+    margin-right: 10px;
+}
+
+
+.eye{
+    width: 65px;
+    height: 37px;
+    background-color: transparent;
+}
+.eye img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+}
+
+/* case study navigation bar comon for work */
+
+/* background page content */
+
+.page-content {
+    position: absolute;
+    top: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    font-family: "Bricolage Grotesque", sans-serif;
+    text-align: center;
+    margin-top: 50px;
+    color: #cccccc8e;
+    font-size: 350px;
+    font-weight: 900;
+    line-height: 250px;
+    z-index: -1;
+}
+
+/* background page content */
+
+/* dummy phone */
+
+.phone-content{
+    width: 100%;
+    height: 80%;
+    margin-top: 10rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    
+}
+.phone-frame{
+    position: relative;
+    width: 340px;
+    background-color: transparent;
+    border-radius: 48px;  
+    z-index: 5; 
+}
+.phone-frame img{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+    z-index: 10; 
+    pointer-events: none;
+}
+
+/* phone inside screen */
+
+.phone-screen{
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 49px;
+    width: 335px;
+    height: 700px;
+    background-color: #ffffff;
+    z-index: 1;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+    overflow-x: hidden;
+    overflow-y: auto;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+/* status bar */
+.status-bar{
+    padding: 18px 35px 5px;
+    font-weight: bold;
+    font-size: 12px;
+    background: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    position: sticky;
+    top: 0; 
+    z-index: 100;
+}
+/* status bar */
+/* notification of the app bar */
+.phone-nav{
+    padding: 0px 30px;
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.two-line{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.profile{
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background-color: #000;
+    overflow: hidden;
+}
+.profile img{
+    width: 100%;
+    height: 100%;
+    object-fit:cover;
+    object-position: center;
+}
+.line{
+    margin-left: 10px;
+}
+.your-acc{
+    font-size: 11px;
+    line-height: 10px;
+}
+.andrew{
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 20px;
+}
+.notification{
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background-color: #00000015;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.fa-bell{
+    font-size: 20px;
+}
+
+/* notification of the app bar */
+/* phone inside screen */
+/* dummy phone */
+
+/* Container for the carousel */
+.app-slider {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.carousel {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    gap: 12px;
+    padding: 10px 20px; 
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    margin-top: 10px;
+}
+
+.carousel::-webkit-scrollbar {
+    display: none;
+}
+.slide {
+    position: relative;
+    overflow: hidden;
+    flex: 0 0 85%; 
+    height: 130px;
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    color: white;
+    scroll-snap-align: center; 
+}
+.slide img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    z-index: 1;
+}
+.slide::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+    z-index: 2;
+}
+.slide span, .slide h3 {
+    position: relative;
+    z-index: 3;
+}
+
+.slide span {
+    font-size: 12px;
+    text-transform: uppercase;
+    opacity: 0.8;
+}
+
+.slide h3 {
+    font-size: 20px;
+    margin: 0;
+}
+.shop-now-text{
+    z-index: 3;
+}
+.shop-now{
+    margin-top: 5px;
+    width: 90px;
+    height: 25px;
+    border-radius: 50px;
+    background-color: #f0f0f0;
+    color: #000;
+    font-size: 14px;
+    font-weight: bold;
+    z-index: 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Container for the carousel */
+
+/* options */
+
+.gender {
+    display: flex;
+    gap: 20px;
+    padding: 10px 20px;
+    background: transparent;
+    justify-content: space-evenly;
+    
+}
+.gender-options {
+    position: relative;
+    cursor: pointer;
+    font-size: 16px;
+    color: #888; 
+    transition: color 0.3s ease;
+    padding-bottom: 2px;
+    white-space: nowrap;
+}
+
+.gender-options.active {
+    color: #000000; 
+    font-weight: 600;
+}
+
+.gender-options::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0; 
+    height: 2px;
+    background-color: #000000; 
+    transition: width 0.3s ease;
+}
+.gender-options.active::after {
+    width: 100%;
+}
+
+/* options */
+.product-image-box {
+    width: 100%;
+    display: flex;
+    justify-content: center; 
+    gap: 20px;               
+    padding: 10px 15px;
+}
+.product-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; 
+    width: 140px;            
+}
+.product-container img {
+    width: 100%;
+    height: 170px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 6px; 
+}
+.product-info-row {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;           
+    width: 100%;
+    padding: 0px 8px;
+}
+.text-group {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.1;
+}
+.product-name {
+    font-size: 13px;
+    color: #333;
+}
+.product-price {
+    margin-top: 2px;
+    font-size: 13px;
+    font-weight: bold;
+    color: #000;
+}
+.add-to-cart{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 10px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    background-color: #000;
+    width: 20px;
+    padding: 5px 6px;
+}
+.wishlist-icon {
+    position: absolute;
+    top: 10px;
+    right: 10px; 
+    z-index: 30;   
+    background: rgba(255, 255, 255, 0.8); 
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease;
+}
+.wishlist-icon i {
+    font-size: 14px;
+    color: #333;
+}
+
+/* Hover effect */
+.wishlist-icon:hover {
+    transform: scale(1.1);
+}
+.wishlist-icon:hover i {
+    color: #ff4d4d; 
+}
+.wishlist-icon.active i {
+    color: #ff4d4d; 
+    font-weight: 900; 
+}
+.wishlist-icon.active {
+    background: #fff;
+    transform: scale(1.1);
+}
+.lower-status-bar {
+    position: sticky;
+    bottom: 0;
+    width: 100%;
+    height: 70px;
+    background-color: transparent;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-bottom: 15px; /* Space for the phone's bottom indicator */
+    z-index: 100;
+}
+.lower-status-dsg{
+    width:80%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: #000;
+    height: 50px;
+    border-radius: 50px;
+}
+
+.nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #888;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.nav-item i {
+    font-size: 15px;
+}
+
+.nav-item span {
+    font-size: 10px;
+    font-weight: 500;
+}
+
+/* Active State (Home is selected) */
+.nav-item.active {
+    color: #ffffff;
+}
+
+.nav-item:hover {
+    color: #ffffff;
+}
