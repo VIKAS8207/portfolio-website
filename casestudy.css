@@ -46,8 +46,11 @@ a {
     transform: rotate(180deg);
     margin-right: 10px;
 }
-
-
+.go-back-to-main{
+    background: transparent;
+    border: none;
+    color: #f0f0f0;
+}
 .eye{
     width: 65px;
     height: 37px;
@@ -465,3 +468,4 @@ a {
 .nav-item:hover {
     color: #ffffff;
 }
+
