@@ -503,6 +503,7 @@ a {
     .msg-container:hover .msg-text{
         opacity: 1;
         transform: translateX(-33px);
+        transition-delay: 0.3s;
     }
 
     /* message button hover */
@@ -2163,6 +2164,7 @@ body.no-scroll {
         .warning-content p { font-weight: 400; opacity: 0.8; }
 
 /* --- MOBILE WARNING OVERLAY --- */
+
 
 
 
